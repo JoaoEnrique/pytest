@@ -1,5 +1,32 @@
-Os testes devem começar com "test_" para serem enxergados pelo pytest
+## Nome dos arquivos
+Os arquivos de testes devem começar com "test_" ou terminar com "_test".
+Exemplo:
+```bash
+test_deve_comparar_dois_numeros.py # será coberto pelo teste
+deve_comparar_dois_numeros_test-.py # será coberto pelo teste
+deve_comparar_dois_numeros.py # não será coberto pelo teste
 
+```
+
+## Nome das funções
+As funções de testes devem começar com "test_" e diferente dos arquivos e terminar com "_test" não fará ser coberta pelo pytest
+Exemplo:
+
+```py
+def test_deve_comparar_dois_numeros():
+    assert 1 == 1
+
+# essa funcao não será coberta pelo teste
+def deve_comparar_dois_numeros_test():
+    assert 1 == 1
+
+# essa funcao não será coberta pelo teste
+def deve_comparar_dois_numeros():
+    assert 1 == 1
+```
+
+
+## Testes
 ```py
 # esse testa vai passar
 def test_deve_passar():
