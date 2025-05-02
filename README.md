@@ -13,6 +13,15 @@ def test_deve_falhar():
     assert (1,2,3) == (1,2,4)
 ```
 
+## Rodar testes
+```bash
+#rodar todos os testes
+pytest
+
+#rodar teste especifico pytest testes/test_one.py
+
+```
+
 ## Resultado
 ```bash
 (venv) joao@macbookpro aula1 % pytest
