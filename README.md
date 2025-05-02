@@ -1,3 +1,5 @@
+Os testes devem começar com "test_" para serem enxergados pelo pytest
+
 ```py
 # esse testa vai passar
 def test_deve_passar():
