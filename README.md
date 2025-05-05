@@ -46,6 +46,12 @@ pytest -x
 pytest --pdb
 ```
 
+### Rodar testes especificos
+```bash
+# roda todos os testes com palavra soma no nome da função
+pytest -k "soma"
+```
+
 ## test/test_calculadora.py
 ```py
 # indicado escrever nome das funcoes detalhadas
