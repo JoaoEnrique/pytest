@@ -52,6 +52,38 @@ pytest --pdb
 pytest -k "soma"
 ```
 
+### Mostra saídas no console (print)
+```bash
+# s de stdout
+pytest -s
+```
+
+### Marcador
+```py
+from pytest import mark
+
+# indicado escrever nome das funcoes detalhadas
+@mark.soma
+def test_quando_soma_receber_4_e_3_retorna_7():
+    entrada1 = 4 # Given
+    entrada2 = 3 # Given
+    resultado = c.soma(entrada1, entrada2) # When
+    esperado = 7 # Then
+    assert resultado == esperado # Then
+
+@mark.soma
+def test_quando_soma_receber_5_e_6_retorna_7():
+    entrada1 = 5 # Given
+    entrada2 = 6 # Given
+    resultado = c.soma(entrada1, entrada2) # When
+    esperado = 11 # Then
+    assert resultado == esperado # Then
+```
+
+```bash
+pytest -m soma
+```
+
 ## test/test_calculadora.py
 ```py
 # indicado escrever nome das funcoes detalhadas
