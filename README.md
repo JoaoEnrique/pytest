@@ -28,6 +28,24 @@ def test_quando_soma_receber_4_e_3_retorna_7():
     
 ```
 
+# Flags
+Flags utilizadas para o pytest
+
+### Mostrar mais detalhes do erro
+```bash
+pytest -v
+```
+
+### Interromper todos os testes se falhar
+```bash
+pytest -x
+```
+
+### Modo debug
+```bash
+pytest --pdb
+```
+
 ## test/test_calculadora.py
 ```py
 # indicado escrever nome das funcoes detalhadas
