@@ -81,7 +81,11 @@ def test_quando_soma_receber_5_e_6_retorna_7():
 ```
 
 ```bash
+# roda todos os testes com marcador soma
 pytest -m soma
+
+# roda todos os testes sem o marcador soma
+pytest -m "not soma"
 ```
 
 ## test/test_calculadora.py
