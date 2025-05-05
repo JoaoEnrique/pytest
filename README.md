@@ -95,6 +95,12 @@ def test():
     pass
 ```
 
+```bash
+# saber motivo de pular teste
+pytest -rs
+```
+
+
 ## test/test_calculadora.py
 ```py
 # indicado escrever nome das funcoes detalhadas
