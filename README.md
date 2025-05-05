@@ -28,29 +28,30 @@ def test_quando_soma_receber_4_e_3_retorna_7():
     
 ```
 
-## Nome das funções
-As funções de testes devem começar com "test_" e diferente dos arquivos e terminar com "_test" não fará ser coberta pelo pytest
-Exemplo:
-
+## test/test_calculadora.py
 ```py
-def test_deve_comparar_dois_numeros():
-    assert 1 == 1
-
-# essa funcao não será coberta pelo teste
-def deve_comparar_dois_numeros_test():
-    assert 1 == 1
-
-# essa funcao não será coberta pelo teste
-def deve_comparar_dois_numeros():
-    assert 1 == 1
+# indicado escrever nome das funcoes detalhadas
+def test_quando_soma_receber_4_e_3_retorna_7():
+    entrada1 = 4 # Given
+    entrada2 = 3 # Given
+    resultado = c.soma(entrada1, entrada2) # When
+    esperado = 7 # Then
+    assert resultado == esperado # Then
+    
+# TDD - Kent Beck - One-step Test
+def test_quando_subtracao_recebe_2_e_1_entao_retorna_1():
+    assert c.subtracao(2, 1) == 1
 ```
 
 
-## Testes
+## test/jogo.py
 ```py
-# esse testa vai passar
-def test_deve_passar():
-    assert (1,2,3) == (1,2,3)
+from codigo.jogo import *
+
+def test_quando_fun_pense_num_numero_recebe_qualquer_valor_retorna_3():
+    valor = 5
+    resposta = pense_num_numero(valor)
+    assert resposta == 3
 ```
 
 
@@ -71,28 +72,14 @@ pytest
 
 ## Resultado
 ```bash
-(venv) joao@macbookpro aula1 % pytest
-========================================== test session starts ==========================================
-platform darwin -- Python 3.13.1, pytest-8.3.5, pluggy-1.5.0
-rootdir: /Users/joao/Documents/PersonalProjects/python/aula1
-collected 2 items                                                                                       
+C:\Users\joao\projetos\pytest>pytest
+=============================================================================== test session starts ================================================================================
+platform win32 -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\joao\projetos\pytest
+collected 3 items                                                                                                                                                                   
 
-tests/test_one.py .                                                                               [ 50%]
-tests/test_two.py F                                                                               [100%]
+tests\test_calculadora.py ..                                                                                                                                                  [ 66%] 
+tests\test_jogo.py .                                                                                                                                                          [100%] 
 
-=============================================== FAILURES ================================================
-___________________________________________ test_deve_falhar ____________________________________________
-
-    def test_deve_falhar():
->       assert (1,2,3) == (1,2,4)
-E       assert (1, 2, 3) == (1, 2, 4)
-E         
-E         At index 2 diff: 3 != 4
-E         Use -v to get more diff
-
-tests/test_two.py:3: AssertionError
-======================================== short test summary info ========================================
-FAILED tests/test_two.py::test_deve_falhar - assert (1, 2, 3) == (1, 2, 4)
-====================================== 1 failed, 1 passed in 0.01s ======================================
-(venv) joao@macbookpro aula1 % 
+================================================================================ 3 passed in 0.03s =================================================================================
 ```

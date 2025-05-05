@@ -23,3 +23,6 @@ def test_quando_soma_receber_4_e_3_retorna_7():
     esperado = 7 # Then
     assert resultado == esperado # Then
     
+# TDD - Kent Beck - One-step Test
+def test_quando_subtracao_recebe_2_e_1_entao_retorna_1():
+    assert c.subtracao(2, 1) == 1
